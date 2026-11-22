@@ -1,0 +1,3 @@
+export const SUBJECTS=Object.freeze(["literacy","numeracy","crafting","farming","engineering","science","history","medicine","mana","runes","rituals","strategy","logistics","leadership"]);
+export function createCurriculum(id,subjects=[],durationDays=30){const selected=[...new Set(subjects)].filter(s=>SUBJECTS.includes(s)).slice(0,8);return {id,subjects:selected,durationDays:Math.max(1,Math.min(1000,Math.floor(Number(durationDays)||30)))};}
+export function curriculumProgress(studentSkills,curriculum){if(!curriculum.subjects.length)return 0;return curriculum.subjects.reduce((sum,s)=>sum+Math.max(0,Math.min(100,Number(studentSkills[s])||0)),0)/curriculum.subjects.length;}
