@@ -1,0 +1,54 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "ZERO: Arise | Behavior",
+    "description": "ZERO: Arise gameplay foundation",
+    "uuid": "f7c91b65-9c48-4fa1-a2f0-5d39c79c01e4",
+    "version": [
+      0,
+      1,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      40
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "87c7a1bc-5ea7-46fb-88c2-9878b5a74c18",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/main.js",
+      "uuid": "b7bfc8a0-c2b4-4ea5-9c46-76ddab15d861",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.16.0"
+    },
+    {
+      "uuid": "fdc1e350-8027-4788-9a37-5134f5e66a7e",
+      "version": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}
