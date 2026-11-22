@@ -1,0 +1,3 @@
+export function money(value){const n=Number(value);return Number.isFinite(n)?Math.max(0,Math.min(1e12,Math.floor(n))):0;}
+export function transfer(wallets,from,to,amount){const n=money(amount);if(!from||!to||from===to||n<=0||money(wallets[from])<n)return false;wallets[from]=money(wallets[from])-n;wallets[to]=money(wallets[to])+n;return true;}
+export class CurrencyRegistry{constructor(){this.currencies=new Map();}register(id,{issuerId,unit="coin",reserve=0}={}){if(!id||this.currencies.has(id))return false;this.currencies.set(id,{id,issuerId,unit,reserve:money(reserve)});return true;}snapshot(){return [...this.currencies.values()].map(x=>({...x}));}}
