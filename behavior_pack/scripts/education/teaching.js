@@ -1,0 +1,2 @@
+export function canTeach(teacher,subject,minSkill=30){return (Number(teacher?.skills?.[subject])||0)>=minSkill;}
+export function lessonOutcome(teacher,student,subject,quality=50){if(!canTeach(teacher,subject))return {success:false,gain:0};const teacherSkill=Number(teacher.skills[subject])||0;const studentSkill=Number(student?.skills?.[subject])||0;const gain=Math.max(0,Math.min(5,(teacherSkill-studentSkill)*0.025+quality*0.01));return {success:gain>0,gain};}
