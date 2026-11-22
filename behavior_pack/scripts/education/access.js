@@ -1,0 +1,1 @@
+export function educationAccess({distance=0,cost=0,wealth=0,policy="open",capacityAvailable=true}={}){if(!capacityAvailable||policy==="closed")return {eligible:false,score:0};const affordability=cost<=wealth?1:policy==="subsidized"?0.8:0;const proximity=Math.max(0,1-Math.max(0,distance)/1000);return {eligible:affordability>0,score:affordability*0.6+proximity*0.4};}
